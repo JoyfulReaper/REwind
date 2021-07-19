@@ -61,17 +61,57 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                            // Call HelloWorld
-
-                            function HelloWorld() {
-                                alert("Hello World!");
+                        // Get the string entered
+                        function getInput() {
+                            document.getElementById("alert").classList.add("invisible");
+                        
+                            let input = document.getElementById("userString").value;
+                        
+                            let reversedString = reverseString(input);
+                        
+                            displayString(reversedString);
+                        }
+                        
+                        // Reverse the string
+                        function reverseString(userString) {
+                            let reversed = [];
+                        
+                            //Reverse string using a for loop - Method 1
+                            for(let i = 0; i < userString.length; i++) {
+                                reversed += userString[(userString.length - 1) - i];
                             }
+                        
+                            // Reverse string using a for loop - Method 2
+                            //for(let i = userString.length - 1; i >= 0; i--) {
+                            //    reversed += userString[i];
+                            //}
+                        
+                            return reversed;
+                        }
+                        
+                        // Display the reversed string
+                        function displayString(outputString) {
+                            //Write message to the page
+                            document.getElementById("msg").innerHTML = `Your string reversed is: ${outputString}`;
+                        
+                            // Show alert box
+                            document.getElementById("alert").classList.remove("invisible");
+                        }
                         </code></pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>HelloWorld is a function that displays and alert with a message of "Hello World!"</p>
+                    <p><span class="logoFont fw-bold">REwind</span> is a JavaScript coding challenge. We ask the user to enter a string,
+                        and then we reverse it.</p>
+                    <h5>getInput()</h5>
+                    <p>We use the JavaScript document API to get the string entered by the user. Next we call the reverseString() function
+                        to reverse the string that the user provided. After that we call the displayString() method to output the result.
+                    </p>
+                    <h5>reverseString()</h5>
+                    <p>We use a for loop to reverse the string that the user entered.</p>
+                    <h5>displayString()</h5>
+                    <p>We use the JavaScript document API innerHTML property to insert the revered string onto the page. 
+                        the we set the Bootstrap alert to visible so that the message can be seen.
+                    </p>
                 </div>
             </div>
         </div>
@@ -94,7 +134,7 @@
                     <div class="row">
                         <div class="col social"><a href="https://www.linkedin.com/in/kyle-givler/" target="_blank"><i
                                     class="fab fa-linkedin fa-2x"></i></a></div>
-                        <div class="col social"><a href="https://github.com/joyfulreaper" target="_blank"><i
+                        <div class="col social"><a href="https://github.com/joyfulreaper/REwind" target="_blank"><i
                                     class="fab fa-github fa-2x"></i></a></div>
                     </div>
                 </div>
